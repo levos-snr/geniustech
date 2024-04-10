@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@layer base {
+  :root {
+    /* Name: custom color palette
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left, #f7f8f8, #acbb78);
+    --background: 191 4.550000000000001% 7.76%;
+    --foreground: 191 0.7000000000000001% 99.85%;
+    --popover: 191 63.6% 12.61%;
+    --popover-foreground: 191 0.7000000000000001% 99.85%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 191 7% 97%;
+    --primary-foreground: 191 0.7000000000000001% 9.7%;
+    --secondary: 191 3.5000000000000004% 29.099999999999998%;
+    --secondary-foreground: 191 0.7000000000000001% 99.85%;
+    --muted: 191 3.5000000000000004% 29.099999999999998%;
+    --muted-foreground: 191 0.7000000000000001% 59.7%;
+    --accent: 191 3.5000000000000004% 29.099999999999998%;
+    --accent-foreground: 191 0.7000000000000001% 99.85%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 191 0.7000000000000001% 99.85%;
+    --border: 191 3.5000000000000004% 29.099999999999998%;
+    --input: 191 3.5000000000000004% 29.099999999999998%;
+    --ring: 191 7% 97%;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.dotPattern {
+  background-image: radial-gradient(rgb(35, 40, 68) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.use-automation-zoom-in {
+  animation: automation-zoom-in 0.5s;
+}
+
+@keyframes automation-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
